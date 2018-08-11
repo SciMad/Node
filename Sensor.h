@@ -20,30 +20,35 @@
 #include "MHZ19.h"
 #include "dataStructures.h"
 
-class Sensor{
-  float getLong(void);
-  float getLatt(void);
-  float getPM10(void);
-  float getPM25(void);
-  float getCO2(void);
-  float getTemp(void);
-  float getHumidity(void);
-  float getOzone(void);
-  
-  MHZ19_RESULT response;
-  SoftwareSerial* CO2Serial;//(CO2_TXPIN, CO2_RXPIN);
-  SoftwareSerial* PMSerial;  //(PM_TXPIN, PM_RXPIN);
-  MHZ19* mhz;
+SoftwareSerial CO2Serial(CO2_TX_PIN, CO2_RX_PIN);
+SoftwareSerial PMSerial(PM_TX_PIN, PM_RX_PIN);
 
-public:
- 
-  float getSensorData(int);
-  void fetchData(void*);
-  Sensor();
-  
-  
-  
-};
+MHZ19_RESULT response;
+
+MHZ19 mhz(&CO2Serial);
 
 
-#endif SENSORS_H
+
+
+float getLong(void);
+float getSensorData(int sensor){
+  switch (sensor){
+    
+    case PM10:
+      //return getPM10();
+    break;
+    
+    case PM25:
+      //return getPM25();
+    break;
+    
+    case CO2:
+        return mhz.getCO2();
+    break;
+    
+   
+    default:
+      return;   
+  }  
+}
+#endif
