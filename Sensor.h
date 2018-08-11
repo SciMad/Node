@@ -19,7 +19,6 @@
 
 #include "MHZ19.h"
 #include "dataStructures.h"
-#include <SoftwareSerial.h>
 
 class Sensor{
   float getLong(void);
