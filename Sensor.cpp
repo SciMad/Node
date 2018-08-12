@@ -2,8 +2,11 @@
 
 
 Sensor::Sensor(){
-  CO2Serial = new SoftwareSerial(CO2_RX_PIN, CO2_TX_PIN);
-  PMSerial = new SoftwareSerial(PM_RX_PIN, PM_TX_PIN);  
+  CO2Serial = new SoftwareSerial(CO2_TX_PIN, CO2_RX_PIN);
+  PMSerial = new SoftwareSerial(PM_TX_PIN, PM_RX_PIN);  
+  CO2Serial.begin(9600);
+  PMSerial.begin(9600);
+  
 }
 
 

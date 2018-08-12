@@ -11,10 +11,10 @@
 #define OZONE 7
 #define NTH 8
 
-#define CO2_RX_PIN 18
-#define CO2_TX_PIN 19
-#define PM_RX_PIN 1
-#define PM_TX_PIN 2
+#define CO2_TX_PIN 18
+#define CO2_RX_PIN 19
+#define PM_TX_PIN 1
+#define PM_RX_PIN 2
 #define ONOZE_PIN A0       //TODO Must assign a pin number instead of A0 //Must Be in AnalogPin
 
 #include "MHZ19.h"
